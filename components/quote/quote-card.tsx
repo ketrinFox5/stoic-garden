@@ -1,7 +1,7 @@
 import { Quote } from "@/types/quote"
 import { QuoteAuthor } from "./quote-author"
 import { cn } from "@/lib/utils"
-import { QuoteText } from '../typograhy/quote-text'
+import { QuoteText } from '../typography/quote-text'
 
 type QuoteCardProps = {
   quote: Quote

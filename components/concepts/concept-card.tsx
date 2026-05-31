@@ -1,8 +1,8 @@
 import Link from "next/link"
 import { Concept } from "@/types/concept"
 import { cn } from "@/lib/utils"
-import { Heading } from '../typograhy/heading'
-import { Text } from '../typograhy/text'
+import { Heading } from '../typography/heading'
+import { Text } from '../typography/text'
 
 type ConceptCardProps = {
   concept: Concept

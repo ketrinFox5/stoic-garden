@@ -1,6 +1,7 @@
 import { JournalEntry } from "@/types/journal-entry"
-import { Text } from "../typograhy/text"
+import { Text } from "../typography/text"
 import { cn } from "@/lib/utils"
+import {formatDateTime} from '@/lib/date utils/date'
 
 type JournalEntryCardProps = {
   entry: JournalEntry
@@ -12,17 +13,30 @@ export function JournalEntryCard({
   className,
 }: JournalEntryCardProps) {
   return (
-    <article
-      className={cn(
-        "space-y-4 rounded-2xl border p-6",
-        className
-      )}
-    >
+    <article className="space-y-4 rounded-2xl border p-6">
       <div className="text-sm text-stone-500">
-        {entry.createdAt}
+        {formatDateTime(entry.createdAt)}
       </div>
 
-      <Text>{entry.content}</Text>
-    </article>
+      <div className="space-y-2">
+        <div className="text-sm font-medium">
+          Question
+      </div>
+
+      <p className="italic text-stone-600">
+        {entry.promptText}
+      </p>
+    </div>
+
+    <div className="space-y-2">
+      <div className="text-sm font-medium">
+        Reflection
+    </div>
+
+      <Text>
+        {entry.answer}
+      </Text>
+    </div>
+  </article>
   )
 }

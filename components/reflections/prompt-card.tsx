@@ -1,7 +1,7 @@
 import { Prompt } from "@/types/prompt"
 import { cn } from "@/lib/utils"
-import { Heading } from '../typograhy/heading'
-import { Text } from '../typograhy/text'
+import { Heading } from '../typography/heading'
+import { Text } from '../typography/text'
 
 type PromptCardProps = {
   prompt: Prompt

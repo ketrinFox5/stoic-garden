@@ -1,5 +1,5 @@
 
-import { PromptCard } from '@/components/reflections/promt-card'
+import { PromptCard } from '@/components/reflections/prompt-card'
 import { ReflectionForm } from "@/components/reflections/reflection-form"
 import { prompts } from '@/lib/mock-data/promts'
 
@@ -10,7 +10,7 @@ export default function ReflectionPage() {
     <div className="space-y-8">
       <PromptCard prompt={prompt} />
 
-      <ReflectionForm />
+      <ReflectionForm prompt={prompt}/>
     </div>
   )
 }

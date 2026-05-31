@@ -1,9 +1,9 @@
 import { ConceptCard } from '@/components/concepts/concept-card';
 import { QuoteCard } from '@/components/quote/quote-card';
-import { Heading } from '@/components/typograhy/heading';
-import { QuoteText } from '@/components/typograhy/quote-text';
-import { SectionTitle } from '@/components/typograhy/section-title';
-import { Text } from '@/components/typograhy/text';
+import { Heading } from '@/components/typography/heading';
+import { QuoteText } from '@/components/typography/quote-text';
+import { SectionTitle } from '@/components/typography/section-title';
+import { Text } from '@/components/typography/text';
 import { Button } from '@/components/ui/button';
 import { getQuotes } from '@/lib/api/quotes';
 import { concepts } from '@/lib/mock-data/concepts';

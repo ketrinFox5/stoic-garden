@@ -1,5 +1,7 @@
 export type JournalEntry = {
   id: string
   createdAt: string
-  content: string
+  promptId: string
+  promptText: string
+  answer: string
 }

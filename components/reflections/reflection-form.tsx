@@ -2,12 +2,25 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import { saveJournalEntry } from '@/lib/services/journal-service';
+import { Prompt } from '@/types/prompt';
 
-export function ReflectionForm() {
+type ReflectionFormProps = {
+  prompt: Prompt
+}
+
+export function ReflectionForm({
+  prompt,
+}: ReflectionFormProps) {
   const [value, setValue] = useState("")
 
   function handleSubmit() {
-    console.log(value)
+    saveJournalEntry({
+      promptId: prompt.id,
+      promptText: prompt.text,
+      answer: value
+    });
+    setValue('');
   }
 
   return (

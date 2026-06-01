@@ -4,7 +4,8 @@ import { Prompt } from "@/types/prompt"
 export function getCurrentPhase():
   "morning" | "evening" {
 
-  const hour = new Date().getHours()
+//   const hour = new Date().getHours()
+    const hour = getCurrentHour()
 
   if (hour < 12) {
     return "morning"
@@ -33,4 +34,17 @@ export function getPromptForToday() {
   return availablePrompts[
     day % availablePrompts.length
   ]
+}
+
+function getCurrentHour() {
+  return Number(
+    new Intl.DateTimeFormat(
+      "en-US",
+      {
+        hour: "numeric",
+        hour12: false,
+        timeZone: "Europe/Moscow",
+      }
+    ).format(new Date())
+  )
 }

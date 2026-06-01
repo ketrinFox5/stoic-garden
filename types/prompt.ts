@@ -1,3 +1,5 @@
+import { ConceptSlug } from './concept-slug'
+
 export type PromptPhase =
   | "morning"
   | "evening"
@@ -5,5 +7,6 @@ export type PromptPhase =
 export type Prompt = {
   id: string
   phase: PromptPhase
-  text: string
+  text: string,
+  concept?: ConceptSlug
 }

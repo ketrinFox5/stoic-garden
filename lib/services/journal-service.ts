@@ -4,14 +4,19 @@ import { JournalEntry } from "@/types/journal-entry"
 const STORAGE_KEY = "journal_entries"
 
 export function getJournalEntries(): JournalEntry[] {
-  const data =
-    localStorage.getItem(STORAGE_KEY)
-
-  if (!data) {
+  if (typeof window === "undefined") {
     return []
   }
 
-  return JSON.parse(data)
+  try {
+    const data = localStorage.getItem(STORAGE_KEY)
+
+    return data
+      ? JSON.parse(data)
+      : []
+  } catch {
+    return []
+  }
 }
 
 export function saveJournalEntry(

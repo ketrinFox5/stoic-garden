@@ -1,5 +1,6 @@
 import { prompts } from "@/lib/mock-data/prompts"
 import { Prompt } from "@/types/prompt"
+import { ConceptSlug } from "@/types/concept-slug"
 
 export function getCurrentPhase():
   "morning" | "evening" {
@@ -46,5 +47,21 @@ function getCurrentHour() {
         timeZone: "Europe/Moscow",
       }
     ).format(new Date())
+  )
+}
+
+export function getPromptsByConcept(
+  concept: ConceptSlug
+) {
+  return prompts.filter(
+    prompt => prompt.concept === concept
+  )
+}
+
+export function getPromptById(
+  id: string
+) {
+  return prompts.find(
+    prompt => prompt.id === id
   )
 }

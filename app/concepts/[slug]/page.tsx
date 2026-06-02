@@ -7,6 +7,9 @@ import {
 from "@/lib/services/concept-service"
 import { Heading } from '@/components/typography/heading'
 import { Text } from '@/components/typography/text'
+import { getPromptsByConcept } from '@/lib/services/prompt-service'
+import { ConceptSlug } from '@/types/concept-slug'
+import { PromptList } from '@/components/prompts/prompt-list'
 
 export default async function ConceptPage({
   params,
@@ -25,6 +28,11 @@ export default async function ConceptPage({
     notFound()
   }
 
+  const relatedPrompts =
+  getPromptsByConcept(
+    concept.slug as ConceptSlug
+  )
+
   return (
     <div className="space-y-8">
       <Heading>
@@ -34,6 +42,16 @@ export default async function ConceptPage({
       <Text>
         {concept.content}
       </Text>
+
+        <section className="space-y-4">
+          <Heading level="h2">
+            Related Prompts
+          </Heading>
+
+          <PromptList
+            prompts={relatedPrompts}
+          />
+      </section>
     </div>
   )
 }

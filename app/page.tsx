@@ -5,13 +5,15 @@ import { QuoteText } from '@/components/typography/quote-text';
 import { SectionTitle } from '@/components/typography/section-title';
 import { Text } from '@/components/typography/text';
 import { Button } from '@/components/ui/button';
-import { getQuotes } from '@/lib/api/quotes';
+// import { getQuotes } from '@/lib/api/quotes';
 import { concepts } from '@/lib/mock-data/concepts';
+import { getQuotes } from '@/lib/services/quote-service';
 import { Quote } from '@/types/quote';
 import Image from "next/image";
 
 export default async function Home() {
-  const quotes = await getQuotes();
+  const quotes = getQuotes();
+  
   return (
      <div className="space-y-4">
       {/* <h1 className="text-4xl font-bold">

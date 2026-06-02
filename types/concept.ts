@@ -3,4 +3,5 @@ export type Concept = {
   slug: string
   title: string
   description: string
+  content: string
 }

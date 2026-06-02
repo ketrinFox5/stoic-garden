@@ -10,6 +10,10 @@ const links = [
     href: "/library",
     label: "Library",
   },
+   {
+    href: "/concepts",
+    label: "Concepts",
+  },
   {
     href: "/journal",
     label: "Journal",

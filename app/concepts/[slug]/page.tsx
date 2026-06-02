@@ -10,6 +10,8 @@ import { Text } from '@/components/typography/text'
 import { getPromptsByConcept } from '@/lib/services/prompt-service'
 import { ConceptSlug } from '@/types/concept-slug'
 import { PromptList } from '@/components/prompts/prompt-list'
+import { getQuotesByConcept } from '@/lib/services/quote-service'
+import { QuoteList } from '@/components/quotes/quote-list'
 
 export default async function ConceptPage({
   params,
@@ -33,6 +35,11 @@ export default async function ConceptPage({
     concept.slug as ConceptSlug
   )
 
+const relatedQuotes =
+  getQuotesByConcept(
+    concept.slug as ConceptSlug
+  )
+
   return (
     <div className="space-y-8">
       <Heading>
@@ -42,6 +49,16 @@ export default async function ConceptPage({
       <Text>
         {concept.content}
       </Text>
+
+        <section className="space-y-4">
+          <Heading level="h2">
+            Related Quotes
+          </Heading>
+
+          <QuoteList
+            quotes={relatedQuotes}
+          />
+        </section>
 
         <section className="space-y-4">
           <Heading level="h2">

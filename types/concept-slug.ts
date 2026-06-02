@@ -5,3 +5,4 @@ export type ConceptSlug =
   | "mortality"
   | "gratitude"
   | "reflection"
+  | "discipline"

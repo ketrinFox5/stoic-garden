@@ -10,7 +10,6 @@ import { Text } from '@/components/typography/text'
 import { getPromptsByConcept } from '@/lib/services/prompt-service'
 import { ConceptSlug } from '@/types/concept-slug'
 import { PromptList } from '@/components/prompts/prompt-list'
-import { getQuotesByConcept } from '@/lib/services/quote-service'
 import { QuoteList } from '@/components/quotes/quote-list'
 
 export default async function ConceptPage({

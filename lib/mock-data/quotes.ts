@@ -8,8 +8,6 @@ export const quotes: Quote[] = [
 
     text:
       "Some things are within our power, while others are not.",
-
-    concepts: ["control"],
   },
 
   {
@@ -19,11 +17,6 @@ export const quotes: Quote[] = [
 
     text:
       "You have power over your mind, not outside events.",
-
-    concepts: [
-      "control",
-      "perception",
-    ],
   },
 
   {
@@ -33,10 +26,5 @@ export const quotes: Quote[] = [
 
     text:
       "Luck is what happens when preparation meets opportunity.",
-
-    concepts: [
-      "virtue",
-      "discipline",
-    ],
   },
 ]

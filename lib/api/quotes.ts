@@ -24,6 +24,5 @@ export async function getQuotes(): Promise<Quote[]> {
     id: String(index),
     text: quote.text,
     author: quote.author,
-    concepts: []
   }))
 }

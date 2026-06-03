@@ -12,7 +12,6 @@ import {
 from "@/lib/services/journal-analytics"
 import { ConceptSlug } from '@/types/concept-slug'
 import { JournalEntryCard } from '@/components/journal/journal-entry-card'
-import { Text } from "@/components/typography/text"
 import { Heading } from '@/components/typography/heading'
 
 export default function MyConceptPage() {
@@ -31,19 +30,21 @@ export default function MyConceptPage() {
       slug
     )
 
+     if (reflections.length === 0) {
+    return (
+      <div className="rounded-2xl border p-6 text-sm text-stone-500">
+        No reflections yet.
+                Explore this concept
+                through future prompts.
+      </div>
+    )
+  }
+
   return (
     <div className="space-y-4">
         <Heading>
             {slug}
         </Heading>
-        {reflections.length === 0 &&
-            <Text>
-                No reflections yet.
-
-                Explore this concept
-                through future prompts.
-        </Text>
-        }
       {
         reflections.map(entry => (
             <JournalEntryCard

@@ -33,6 +33,7 @@ export function saveJournalEntry(
     promptId: input.promptId,
     promptText: input.promptText,
     answer: input.answer,
+    concept: input.concept,
   }
 
   localStorage.setItem(

@@ -18,6 +18,10 @@ export function JournalEntryCard({
         {formatDateTime(entry.createdAt)}
       </div>
 
+      <div className="text-xs text-stone-500">
+        {entry.concept}
+      </div>
+
       <div className="space-y-2">
         <div className="text-sm font-medium">
           Question

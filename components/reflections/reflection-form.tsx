@@ -18,7 +18,8 @@ export function ReflectionForm({
     saveJournalEntry({
       promptId: prompt.id,
       promptText: prompt.text,
-      answer: value
+      answer: value,
+      concept: prompt.concept,
     });
     setValue('');
   }

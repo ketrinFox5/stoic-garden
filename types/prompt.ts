@@ -8,5 +8,5 @@ export type Prompt = {
   id: string
   phase: PromptPhase
   text: string,
-  concept?: ConceptSlug
+  concept: ConceptSlug
 }

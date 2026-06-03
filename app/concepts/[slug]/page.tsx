@@ -35,11 +35,6 @@ export default async function ConceptPage({
     concept.slug as ConceptSlug
   )
 
-const relatedQuotes =
-  getQuotesByConcept(
-    concept.slug as ConceptSlug
-  )
-
   return (
     <div className="space-y-8">
       <Heading>
@@ -50,15 +45,6 @@ const relatedQuotes =
         {concept.content}
       </Text>
 
-        <section className="space-y-4">
-          <Heading level="h2">
-            Related Quotes
-          </Heading>
-
-          <QuoteList
-            quotes={relatedQuotes}
-          />
-        </section>
 
         <section className="space-y-4">
           <Heading level="h2">

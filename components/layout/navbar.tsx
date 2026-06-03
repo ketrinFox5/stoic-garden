@@ -15,6 +15,10 @@ const links = [
     label: "Concepts",
   },
   {
+    href: "/my-concepts",
+    label: "My concepts",
+  },
+  {
     href: "/journal",
     label: "Journal",
   },

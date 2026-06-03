@@ -5,14 +5,14 @@ import { QuoteText } from '@/components/typography/quote-text';
 import { SectionTitle } from '@/components/typography/section-title';
 import { Text } from '@/components/typography/text';
 import { Button } from '@/components/ui/button';
-// import { getQuotes } from '@/lib/api/quotes';
+import { getQuotes } from '@/lib/api/quotes';
 import { concepts } from '@/lib/mock-data/concepts';
-import { getQuotes } from '@/lib/services/quote-service';
+// import { getQuotes } from '@/lib/services/quote-service';
 import { Quote } from '@/types/quote';
 import Image from "next/image";
 
 export default async function Home() {
-  const quotes = getQuotes();
+  const quotes = await getQuotes();
   
   return (
      <div className="space-y-4">
@@ -25,16 +25,16 @@ export default async function Home() {
 
       {quotes.map(quote => <QuoteCard key={quote.id} quote={quote}></QuoteCard>)}
        <div className="grid gap-4 md:grid-cols-2">
-      {concepts.map((concept) => (
+      {/* {concepts.map((concept) => (
         <ConceptCard
           key={concept.id}
           concept={concept}
         />
-      ))}
+      ))} */}
     </div>
-      <Button variant='primary' size='sm' children="primary"/>
+      {/* <Button variant='primary' size='sm' children="primary"/>
       <Button variant='secondary' size='md' children="secondary"/>
-      <Button variant='ghost' size='lg' children="ghost"/>
+      <Button variant='ghost' size='lg' children="ghost"/> */}
     </div>
   );
 }
